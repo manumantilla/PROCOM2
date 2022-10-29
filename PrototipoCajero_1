@@ -1,0 +1,148 @@
+#Este codigo esta bien pero esta muy largo peor es FUNCIONAL
+# Bienvenida y menu
+import sys
+
+
+# Clase con todos los productos
+class Item():
+    iva = 0.8  # declarando un atributo de IVA al consumidos
+    def __init__( self, name: str, price: float,  use: str, quantity: int):
+
+        self.name = name
+        self.price = price
+        self.use = use
+        self.quantity = quantity
+        self.carrito = []
+    def hacer_una_ord(self):
+        item1 = Item("Pastas", 2200, "alto en grasa perrito", 100)
+        item2 = Item("Atun", 4000, "alto en amoniaco perrito", 200)
+        item3 = Item("Atun", 4000, "alto en amoniaco perrito", 200)
+        item4 = Item("Croquetas", 5000, "alto en colorantes", 12)
+        item5 = Item("Pan", 1000, "alto en carbohidratos", 45)
+        item6 = Item("Bolsa de tela", 5000, "alto en colorantes", 12)
+        item7 = Item("Aceite", 51000, "alto en grasas", 62)
+        item8 = Item("Gomitas", 5000, "alto en edulcorantes", 52)
+        item9 = Item("Leche", 2000, "alto en grasas", 70)
+        item10 = Item("Chocolate", 3400, "alto en azucar ", 4)
+
+        # Choose the producto
+        option = int(input("Escoge que quieres comprar: 1.Arros, 2.Pastas 3.Atun 4.Croquetas 5.Pan 6.Bolsa de tela, 7.aceite, 8.Gomitas 9.leche 10.chocolate"))
+        # Agregar a un carrito ir disminuyendo el stock y pedir la cantidad
+        if option == 1:
+                    cuantos = int(input("Digita la cantidad"))
+                    self.carrito.append(item1.name)
+                    stock = item1.quantity - cuantos
+                    if stock < item1.quantity:
+                        print("Demasidos productos estamos en tiempos de COVID lleva lo necesario :)")
+                    else:
+                        print("Elegiste el prodcuto. ", item1.name, " y tu carrito va con esto", self.carrito,
+                      " y la cantidad que escogiste fue de,", cuantos, " y en stock quedo. ", stock,
+                      'Recuerda que la calidad es ', item1 .use)
+        elif option == 2:
+            cuantos = int(input("Dime la cantidad"))
+            self.carrito.append(item2.name)
+            stock = item2.quantity-cuantos
+            if stock < item2.quantity:
+                print("Demasidos productos estamos en tiempos de COVID lleva lo necesario :)")
+            else:
+                print("Elegiste el prodcuto. ", item2.name, " y tu carrito va con esto", self.carrito,
+                    " y la cantidad que escogiste fue de,", cuantos, " y en stock quedo. ", stock,
+                    'Recuerda que la calidad es ', item2.use)
+        elif option==3:
+            cuantos=int(input("Dime la cantidad"))
+            self.carrito.append(item3.name)
+            stock = item3.quantity - cuantos
+            #Por si lleva muchos
+            if stock < item3.quantity:
+                print("Demasidos productos estamos en tiempos de COVID lleva lo necesario :)")
+            else:
+                print("Elegiste el prodcuto. ", item3.name, " y tu carrito va con esto", self.carrito,
+                    " y la cantidad que escogiste fue de,", cuantos, " y en stock quedo. ", stock,
+                    'Recuerda que la calidad es ', item3.use)     
+        elif option == 4:
+            cuantos=int(input("Dime la cantidad"))
+            self.carrito.append(item4.name)
+            stock = item4.quantity - cuantos
+            if stock < item4.quantity:
+                print("Demasidos productos estamos en tiempos de COVID lleva lo necesario :)")
+            else:
+                print("Elegiste el prodcuto. ", item4.name, " y tu carrito va con esto", self.carrito,
+                      " y la cantidad que escogiste fue de,", cuantos, " y en stock quedo. ", stock,
+                      'Recuerda que la calidad es ', item4.use)
+        elif option == 5:
+            cuantos = int(input("Dime la cantidad"))
+            self.carrito.append(item5.name)
+            stock = item5.quantity - cuantos
+            if stock < item5.quantity:
+                print("Demasidos productos estamos en tiempos de COVID lleva lo necesario :)")
+            else:
+                print("Elegiste el prodcuto. ", item5.name, " y tu carrito va con esto", self.carrito,
+                    " y la cantidad que escogiste fue de,", cuantos, " y en stock quedo. ", stock,
+                    'Recuerda que la calidad es ', item5.use)
+        elif option == 6:
+            cuantos = int(input("Dime la cantidad"))
+            self.carrito.append(item6.name)
+            stock = item6.quantity - cuantos
+            if stock < item6.quantity:
+                print("Demasidos productos estamos en tiempos de COVID lleva lo necesario :)")
+            else:
+                print("Elegiste el prodcuto. ", item6.name, " y tu carrito va con esto", self.carrito,
+                      " y la cantidad que escogiste fue de,", cuantos, " y en stock quedo. ", stock,
+                      'Recuerda que la calidad es ', item6.use)
+        elif option == 7:
+            cuantos = int(input("Dime la cantidad"))
+            self.carrito.append(item7.name)
+            stock = item7.quantity - cuantos
+            if stock < item7.quantity:
+                print("Demasidos productos estamos en tiempos de COVID lleva lo necesario :)")
+            else:
+                print("Elegiste el prodcuto. ", item7.name, " y tu carrito va con esto", self.carrito,
+                    " y la cantidad que escogiste fue de,", cuantos, " y en stock quedo. ", stock,
+                    'Recuerda que la calidad es ', item7.use)
+        elif option == 8:
+            cuantos = int(input("Dime la cantidad"))
+            self.carrito.append(item8.name)
+            stock = item8.quantity - cuantos
+            if stock < item8.quantity:
+                print("Demasidos productos estamos en tiempos de COVID lleva lo necesario :)")
+            else:
+                print("Elegiste el prodcuto. ", item8.name, " y tu carrito va con esto", self.carrito,
+                    " y la cantidad que escogiste fue de,", cuantos, " y en stock quedo. ", stock,
+                    'Recuerda que la calidad es ', item8.use)
+        elif option == 9:
+            cuantos=int(input("Dime la cantidad"))
+            self.carrito.append(item9.name)
+            stock = item9.quantity - cuantos
+            if stock < item9.quantity:
+                print("Demasidos productos estamos en tiempos de COVID lleva lo necesario :)")
+            else:
+                print("Elegiste el prodcuto. ", item9.name, " y tu carrito va con esto", self.carrito,
+                    " y la cantidad que escogiste fue de,", cuantos, " y en stock quedo. ", stock,
+                    'Recuerda que la calidad es ', item9.use)
+        elif option == 10:
+            cuantos = int(input("Dime la cantidad"))
+            self.carrito.append(item10.name)
+            stock = item10.quantity - cuantos
+            if stock < item10.quantity:
+                print("Demasidos productos estamos en tiempos de COVID lleva lo necesario :)")
+            else:
+                print("Elegiste el prodcuto. ", item10.name, " y tu carrito va con esto", self.carrito,
+                    " y la cantidad que escogiste fue de,", cuantos, " y en stock quedo. ", stock,
+                    'Recuerda que la calidad es ', item10.use)
+
+print("------------------------------------------------------------------------------------------")
+print("------------------SUPERMERCADO BUCARAMANCHESTER------------------")
+print("------------------------------------------------------------------------------------------")
+name=input("nombre")
+price=input("¿Te gusta mucho nuestro negocio 1.si 2.no?")
+use=input("Crees que la calidad de nuestros productos son buenos  si, no")
+quantity=input("Has venido antes a nuestro negocio 1.si 2.no")
+print("Gracias por escogernos sr/sra",name," comenzemos a llenar ese carrito :)")
+
+compra = Item(name,price,use,quantity)
+while True:
+    manolito = int(input("Quieres ordenar algo: 1.sii 0.no "))
+    if manolito == 1:
+        compra.hacer_una_ord()
+    elif manolito == 0:
+        print(" Gracias por utilizar tu cajero Supermercado Bga")
