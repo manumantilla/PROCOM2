@@ -1,0 +1,123 @@
+#Crear la clase
+
+#2 clases una para registrar estudiante y otra para profesores
+class Matricular():
+    def __init__(self,nombre,edad):
+        self.name = nombre
+        self.edad = edad
+        self.nombre = str
+        self.clase1:str = []
+        self.clase2:str =[]
+        self.clase3:str=[]
+        self.clase4:str=[]
+        self.contador_teacher1= 0
+        self.contador_teacher_2 = 0
+        self.contador_teacher3=0
+        self.contador_teacher_4=0
+        self.clase:str = list()
+    def  matricular_clase_calculo(self):
+        teacher = int(input("Profesoras disponibles para calculo 1.Manolo 2.Paula"))
+        if teacher == 1:
+            if self.contador_teacher1 < 2:
+                nombre = str(input("Add ur name son of a bitch"))
+                apellido = str(input("Add ur surname bby:"))
+                id = str(input("Add ur ID"))
+                semester = str(input("Add ur semester"))
+                #Contador para poner un limite de estudiante que pueden matricular con Manuel
+                self.clase1.append(nombre)
+                self.clase1.append(apellido)
+                self.clase1.append(id)
+                self.clase1.append(semester)
+                #self.clase1.append(semester)
+                print(self.clase1)
+                self.contador_teacher1 = self.contador_teacher1+1
+                print(self.contador_teacher1)
+            else:
+                print("MUCHOS ESTUDIANTES SE LLENO")
+        elif teacher==2:
+            if self.contador_teacher_2 <3:
+                nombre = str(input("Add ur name son of a bitch :)"))
+                apellido = str(input("Add ur surname bby:"))
+                id = str(input("Add ur ID"))
+                semester = str(input("Add ur semester"))
+                # Contador para poner un limite de estudiante que pueden matricular con Manuel
+                self.clase2.append(nombre)
+                self.clase2.append(apellido)
+                self.clase2.append(id)
+                self.clase2.append(semester)
+                # self.clase1.append(semester)
+                print(self.clase2)
+                self.contador_teacher_2 = self.contador_teacher_2+1
+            else:
+                print("SE LLENO ESTE SALON")
+        self.menu()
+    def matricular_clase_progr(self):
+        teacher = int(input("Profesoras disponibles para prog de computadores 1.Manolo 2.Paula"))
+        if teacher == 3:
+            nombre = str(input("Add ur name "))
+            apellido = str(input("Add ur surname bby:"))
+            id = str(input("Add ur ID"))
+            semester = str(input("Add ur semester"))
+            # Contador para poner un limite de estudiante que pueden matricular con Manuel
+            self.clase3.append(nombre)
+            self.clase3.append(apellido)
+            self.clase3.append(id)
+            self.clase3.append(semester)
+            # self.clase1.append(semester)
+            print(self.clase3)
+
+            self.contador_teacher3 = +1
+            print(self.contador_teacher1)
+        elif teacher == 4:
+            nombre = str(input("Add ur name son of a bitch"))
+            apellido = str(input("Add ur surname bby:"))
+            id = str(input("Add ur ID"))
+            semester = str(input("Add ur semester"))
+            # Contador para poner un limite de estudiante que pueden matricular con Manuel
+            self.clase4.append(nombre)
+            self.clase4.append(apellido)
+            self.clase4.append(id)
+            self.clase4.append(semester)
+            # self.clase1.append(semester)
+            print(self.clase4)
+
+            self.contador_teacher_4= +1
+        self.menu()
+    def menu(self):
+        mode = int(input("Eres 1.Maestro ó 2.Estudiante,"))
+        if mode == 1:
+            admin = "admin "
+            password = 123456
+            name_prof = str(input("Digita tu nombre clave profesor :)"))
+            password = int(input("Digita tu contraseña"))
+            if name_prof == "admin" and password == 123456:
+                self.menu_t()
+        elif mode == 2:
+            op = int(input("¿Que quieres matricular 1.calculo 2.programacion de computadores?"))
+            if op == 1:
+                self.matricular_clase_calculo()
+            elif op==2:
+                self.matricular_clase_progr()
+    def menu_t(self):
+        print("ERES PROFESOR")
+        print("Llevas estos estudiantes",self.clase1)
+        self.menu()
+    def deleter_all_info(self):
+        self.clase1.clear()
+        self.clase2.clear()
+        self.clase3.clear()
+        self.clase4.clear()
+        self.contador_teacher1.clear()
+        self.contador_teacher_2.clear()
+        self.contador_teacher3.clear()
+        self.contador_teacher_4.clear()
+class Teachers(Matricular):
+    def presentarse(self):
+        print("Hola soy ",self.name," y estoy encargado de dictar la materia de: ",self.edad," y pertenezco a la UNAB")
+
+manuel = Teachers("Manolo","Programaciòn")
+manuel.presentarse()#Llamamos la metodo y manolo se presenta
+
+obj = Matricular("admin","calculo")
+obj.menu()
+
